@@ -17,8 +17,7 @@ public class FlipkartLoginPage
 	public FlipkartLoginPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
-		
-		
+			
 	}
 
 	
