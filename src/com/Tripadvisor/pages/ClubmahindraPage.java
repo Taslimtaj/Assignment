@@ -12,8 +12,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ClubmahindraPage 
 {
-	@FindBy(css="div[docid='1156207'] span")
+	@FindBy(xpath="//span[text()='Club Mahindra Madikeri, Coorg']")
 	private WebElement EnterTxt;
+	
+	
 	
 	public ClubmahindraPage(WebDriver driver)
 	{
@@ -22,11 +24,10 @@ public class ClubmahindraPage
 	
 	public void SearchedPage()
 	{
-		EnterTxt.sendKeys(Keys.ARROW_DOWN);
-		EnterTxt.click();
 		
-		
-		
+		EnterTxt.click();	
 	}
+	
+	
 
 }

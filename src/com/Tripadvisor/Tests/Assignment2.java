@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import com.Tripadvisor.pages.ClubmahindraPage;
+import com.Tripadvisor.pages.EnteredTextPage;
 import com.Tripadvisor.pages.TripadSearchpage;
 import com.Tripadvisor.pages.searchforTextPage;
 
@@ -33,21 +34,23 @@ public class Assignment2
 		
 		searchforTextPage a=new searchforTextPage(driver);
 		
-		a.Searchtextbox("Club Mahindra.");
-		
-		List<WebElement> allsugge = driver.findElements(By.cssSelector("div[docid='1156207'] span"));
-		int count = allsugge.size();
-		
-		System.out.println("count is "+count);
-		for(WebElement link :allsugge)
-		{
-			System.out.println(link);
-		}
+		a.Searchtextbox("Club Mahindra Madikeri, Coorg");
 		
 		
 		ClubmahindraPage c=new ClubmahindraPage(driver);
 		
 		c.SearchedPage();
+		
+		EnteredTextPage e=new EnteredTextPage(driver);
+		
+		e.clickonreviewpage();
+		
+		driver.getWindowHandles();
+		//driver.sw
+		
+		
+		Thread.sleep(4000);
+		e.clickonwrite();
 		
 		driver.close();
 		
