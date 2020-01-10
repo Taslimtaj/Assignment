@@ -3,11 +3,15 @@ package com.Tripadvisor.Tests;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.Tripadvisor.Generic.windowUtility;
@@ -60,8 +64,31 @@ public class Assignment
 		//new Select(driver.findElement(By.id("qid10"))).selectByVisibleText("5");
 		
 		Thread.sleep(3000);
-
-		driver.close();
+		
+		driver.findElement(By.xpath("//input[@id='ReviewTitle']")).sendKeys("Nice Experience");
+		
+		Thread.sleep(3000);
+		
+		WebElement a = driver.findElement(By.xpath("//input[@id='noFraud']"));
+	
+		a.click();
+		
+		Thread.sleep(3000);
+		
+		boolean checked = a.isSelected();
+		
+		Thread.sleep(3000);
+		
+		System.out.println("is checkbox selected"+checked);
+		
+		Thread.sleep(3000);
+		
+			
+		 WebElement btn = driver.findElement(By.xpath("//div[@id='SUBMIT']"));
+		
+		 btn.click();;
+		
+		 driver.close();
 		
 	}
 
